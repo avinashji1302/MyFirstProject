@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        #cent{
+            text-align: center;
+           
+            margin-top: 100px;
+        }
+        .btn{
+            margin: 8px;
+           
+        }
+    </style>
+</head>
+<body>
+    <div id="cent">
+        <input id="number1" type="number" placeholder="Input1" >
+        <br><br>
+        <input id="number2" type="number" placeholder="Input2">
+        <br><br>
+        <input type="button" value="+" onclick="cal(Add)" >
+        <input type="button" value="-" onclick="cal(Sub)"class="btn">
+        <input type="button" value="*" onclick="cal(Multi)"class="btn">
+        <input type="button" value="/" onclick="cal(Div)"class="btn">
+        
+        <br><br>
+    
+        <input type="number" placeholder="Result" id="result">
+    
+    </div>
+   
+    <script>
+
+        function cal(callback){
+            var n1=parseFloat(document.getElementById("number1").value);
+            var n2=parseFloat(document.getElementById("number2").value);
+           var result= callback(n1,n2);
+           document.getElementById("result").value=result
+
+        }
+        function Add(n1,n2){
+            return n1+n2;
+
+        }
+        function Sub(n1,n2){
+            return n1-n2;
+
+        }
+        function Multi(n1,n2){
+            return n1*n2;
+
+        }
+        function Div(n1,n2){
+            return n1/n2;
+
+        }
+      
+
+
+    </script>
+</body>
+</html>
